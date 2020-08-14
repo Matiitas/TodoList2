@@ -9,8 +9,8 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-//const usersRoute = require("./routes/users");
-//app.use("/api/v1/users", usersRoute);
+const todosRoute = require("./routes/todos");
+app.use("/api/v1/todos", todosRoute);
 
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, {
