@@ -1,0 +1,8 @@
+.wrapper-todoList {
+  position: relative;
+  display: flex;
+  height: auto;
+  background-color: bisque;
+  align-content: center;
+  justify-content: center;
+}

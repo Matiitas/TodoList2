@@ -8,11 +8,6 @@ const todoSchema = new Schema(
       required: true,
       minlength: 3,
     },
-    date: {
-      type: Date,
-      required: true,
-      min: Date.now,
-    },
     finalized: {
       type: Boolean,
       default: false,

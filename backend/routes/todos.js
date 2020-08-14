@@ -1,11 +1,6 @@
 const router = require("express").Router();
 const Todo = require("../models/todoModel");
 
-//router.route("/login").post(validateEmail, loginUser);
-
-//Devuelvo datos del usuario logueado, mas favorite movies populate
-//router.route("/profile").get(auth, getUser);
-
 router.route("/").get(async (req, res) => {
   try {
     const todos = await Todo.find({});
@@ -19,10 +14,9 @@ router.route("/").get(async (req, res) => {
 router.route("/").post(async (req, res) => {
   try {
     const text = req.body.text;
-    const date = req.body.date;
-    const todo = new Todo({ text, date });
+    const todo = new Todo({ text });
     await Todo.create(todo);
-    res.json({ message: "Todo created" });
+    res.json({ message: "Todo created", todo });
   } catch (e) {
     console.log(e);
     res.status(500).json({ message: "Internal Error" });
